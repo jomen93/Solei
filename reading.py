@@ -1,3 +1,12 @@
+#  ===========================================================================
+#  @file:   reading.py
+#  @brief:  Reading images from source
+#  @author: Johan Mendez
+#  @date:   11/07/2021
+#  @email:  johan.mendez@databiz.co
+#  @status: Debug
+#  @detail: version 1.0
+#  ===========================================================================
 import os
 import cv2
 import pytesseract
@@ -6,6 +15,9 @@ import numpy as np
 from pytesseract import Output 
 
 img_size = 800
+# Cut images for speed up
+speed_view = False
+
 
 def Reading_jpg(datadir, categories):
 	
@@ -84,8 +96,9 @@ def read_words_tesseract(file):
 	# custom_config = r'-l spa --psm 3'
 	custom_config = r"--psm 6 oem 0"
 	img = cv2.imread(file)
-	height, width = img.shape[:2]
-	img = img[0: int(height/4) , int(width/2):-1]
+	if speed_view == True:
+		height, width = img.shape[:2]
+		img = img[0: int(height/4) , int(width/2):-1]
 	x = pytesseract.image_to_string(img, config=custom_config)
 	x = x.split()
 	return x 
@@ -103,8 +116,9 @@ def get_boxes(file, CC):
 	
 
 	img = cv2.imread(file)
-	height, width = img.shape[:2]
-	img = img[0: int(height/4) , int(width/2):-1]
+	if speed_view == True:
+		height, width = img.shape[:2]
+		img = img[0: int(height/4) , int(width/2):-1]
 	d = pytesseract.image_to_data(img, config=custom_config,output_type=Output.DICT)
 	n_boxes = len(d['level'])
 	for i in range(n_boxes):

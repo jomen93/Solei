@@ -1,6 +1,5 @@
+
 import numpy as np 
-
-
 
 def get_cc(x):
 	numbers=[]

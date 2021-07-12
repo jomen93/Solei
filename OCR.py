@@ -99,5 +99,9 @@ for i in range(len(files)):
 	os.rename(files[i], final_path)
 	print("file "+files[i].replace(datadir,"")+" has ", CC)
 
-	
-	
+# Util URL's
+#  ===========================================================================
+#  https://nanonets.com/blog/ocr-with-tesseract/
+#  https://stackoverflow.com/questions/43064124/how-to-convert-multipage-pdf-to-list-of-image-objects-in-python
+#  https://guides.nyu.edu/tesseract/image-quality
+#  https://www.programcreek.com/python/
