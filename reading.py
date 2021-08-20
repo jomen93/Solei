@@ -137,4 +137,3 @@ def get_from_section(file):
 	cv2.waitKey(0)
 
 
-
