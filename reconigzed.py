@@ -1,9 +1,9 @@
 import numpy as np 
 import re
 
-f = open("image10.txt", "r")
-words = f.read()
-words = words.split()
+# f = open("image40.txt", "r")
+# words = f.read()
+# words = words.split()
 
 def get_cc(x):
 	numbers=[]
@@ -28,16 +28,25 @@ def get_max(x):
 
 
 def regex(word):
+	"""
+
+	"""
 	save_options = []
 	for iterator in range(len(word)):
 		len_find = len(re.findall(r'[0-9]+', word[iterator]))
-		words_find = re.findall(r'[0-9]+', word[iterator])
-		#words_find = re.sub(r'(?<=\d)[,\.]','',words_find)
+		# len_find = len(re.findall(r'[0-9]+', word[iterator]))
+		words_find = re.findall(r'(\b[0-9]+)+', word[iterator])
+		words_find = ["".join(words_find)]
+		# print(words_find)
+		# words_find = re.findall(r'[0-9]+', word[iterator])
+		# words_find = re.sub(r'(?<=\d)[,\.]','',words_find)
 		if len_find != 0:
-			#print(words_find)
+			# words_find = "".join(words_find)
 			for j in words_find:
 				if len(j) > 6 and len(j) <=10:
+
 					if j not in save_options:
+						# print(j, "prueba")
 						save_options.append(j)
 					else:
 						pass
@@ -47,13 +56,13 @@ def regex(word):
 			save_options.remove(save_options[k])
 
 	if len(save_options) != 0:
+		
 		return get_max(save_options)
 	else:
 		return "Not found !"
 	
 	
-	# return word
-		
+
 # Data to put conditionals about ID
 # https://www.datosmundial.com/america/colombia/crecimiento-poblacional.php
 
