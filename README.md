@@ -24,13 +24,13 @@ ignore_warnings = True
 
 Cuando el programa hace el reconocimiento crea archivos adicionales con el mismo nombre y adicionandole el numero de identificación que se encontró. si se desean activar cajas para encerrar las palabras encontradas se debe activar la siguiente bandera
 
-```
+```python
 Save_boxes = True
 ```
 
 Por otra parte este código hace un análizis reducido en resolución para hacer más económico el computo, si se necesita utilizar con imagenes de resolucion más baja se debe activar un método de análisis de mayor resolución, que se activa con la siguiente bandera, es preciso mencionar que esto puede hacer que el código tarde aproximadamente cuatro veces más:
 
-```
+```python
 High_analysis = True
 ```
 
