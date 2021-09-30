@@ -50,7 +50,7 @@ python OCR_main.py
 
 En este caso para la identificación del modelo se hace 
 
---
+---
 
 ## Identificacion 
 
@@ -76,6 +76,20 @@ def get_cc(x):
 		return u[c>1]
 ```
 
+2. La segunda función se basa en las expresiones regulares, se identifican solamente los números con la suntaxis adecuada usando regex. Además de esto se incluye la identifiación de cédulas de ciudadanía que estén escrita con separadores de miles. Para hacer el refinamiento de esta función se consideran tres condiciones. Las dos primeras es que la longitud de cadena de números encontradas se ubiquen dentro de los 6 y 10 elementos. La siguiente condición se hace para diferenciar los números de cédula y los números de celular, esto se hace descartando los números encontrados que empicen en tres. La razón es la siguiente:
 
-	
+> Desde el 2006 la registraduría nacional del estado civil bajo la resolución 3007 de 2004, en su artículo 5 adopta que se establece el Número único de identificacioón personal (NUIP) cuya estructura alfanumérica determina la oficina de registro del estado civil y los iete siguientes a un consecutivo numérico. Desde el 2004 se empezó a asignar el NUIP iniciando su numeración en mil millones 1.000.000 en forma consecutiva sin hacer diferencia entre hombres y mujeres. Para conmesurar esto se consulta las tatas de natalidad del DANE
 
+
+
+| Año          | % Natalidad    | Población     |
+| :---:        |     :---:      |    :---:      |
+| 2015         | 1.55 %         | 47.52 M       |
+| 2016         | 1.53 %         | 48.18 M       |
+| 2017         | 1.51 %         | 48.91 M       |
+| 2018         | 1.49 %         | 49.66 M       |
+| 2019         | 1.47 %         | 50.34 M       |
+
+>  Los NIUP que se asignaron al cabo de 5 años son alrededor de 36 M, puede decirse que que en promedio , según la tendencia se consumen alrededor de 7.4 M digitos/año, veamos a este ritmo cuantos años durara de primer dígito el número 1:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{999999999\text{&space;digitos}}{7400000&space;\text{&space;digitos/ano}}&space;\approx&space;135&space;\text{&space;anos}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{999999999\text{&space;digitos}}{7400000&space;\text{&space;digitos/ano}}&space;\approx&space;135&space;\text{&space;anos}" title="\frac{999999999\text{ digitos}}{7400000 \text{ digitos/ano}} \approx 135 \text{ anos}" /></a>
