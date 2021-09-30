@@ -80,7 +80,7 @@ def get_cc(x):
 
 > Desde el 2006 la registraduría nacional del estado civil bajo la resolución 3007 de 2004, en su artículo 5 adopta que se establece el Número único de identificacioón personal (NUIP) cuya estructura alfanumérica determina la oficina de registro del estado civil y los iete siguientes a un consecutivo numérico. Desde el 2004 se empezó a asignar el NUIP iniciando su numeración en mil millones 1.000.000 en forma consecutiva sin hacer diferencia entre hombres y mujeres. Para conmesurar esto se consulta las tatas de natalidad del DANE
 
-<center>
+<p align="center">
 
 | Año          | % Natalidad    | Población     |
 | :---:        |     :---:      |    :---:      |
@@ -90,12 +90,47 @@ def get_cc(x):
 | 2018         | 1.49 %         | 49.66 M       |
 | 2019         | 1.47 %         | 50.34 M       |
 
-</center>
+</p>
 
 >  Los NIUP que se asignaron al cabo de 5 años son alrededor de 36 M, puede decirse que que en promedio , según la tendencia se consumen alrededor de 7.4 M digitos/año, veamos a este ritmo cuantos años durara de primer dígito el número 1:
 
 <p align="center">
 	<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{999999999\text{&space;digitos}}{7400000&space;\text{&space;digitos/ano}}&space;\approx&space;135&space;\text{&space;anos}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{999999999\text{&space;digitos}}{7400000&space;\text{&space;digitos/ano}}&space;\approx&space;135&space;\text{&space;anos}" title="\frac{999999999\text{ digitos}}{7400000 \text{ digitos/ano}} \approx 135 \text{ anos}" /></a>	
 </p>
+
+> En ese orden de ideas de sobra se puede poner la condicion que un número de 10 dígitos que empiece por 1, seguramente será un número de identificación, para este caso la funcion será:
+
+```python
+def regex(word):
+
+	def get_max(x):
+	x = np.array(list(map(int, x)))
+	return np.max(x)
+
+	save_options = []
+	for iterator in range(len(word)):
+		len_find = len(re.findall(r'[0-9]+', word[iterator]))
+		words_find = re.findall(r'(\b[0-9]+)+', word[iterator])
+		words_find = ["".join(words_find)]
+		if len_find != 0:
+			for j in words_find:
+				if len(j) > 6 and len(j) <=10:
+
+					if j not in save_options:
+						save_options.append(j)
+					else:
+						pass
+
+	for k in range(len(save_options)):
+		if(save_options[k][0] == "3" and len(save_options[k]) == 10):
+			save_options.remove(save_options[k])
+
+	if len(save_options) != 0:
+		
+		return get_max(save_options)
+	else:
+		return "Not found !"
+```
+
 
 
