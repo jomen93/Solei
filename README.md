@@ -1,6 +1,6 @@
 <p align="center">
 	<img src="images/databiz_image.jpeg" width="200" title="logotipo_databiz">
-<p>
+</p>
 
 # Solei
 
@@ -92,4 +92,6 @@ def get_cc(x):
 
 >  Los NIUP que se asignaron al cabo de 5 años son alrededor de 36 M, puede decirse que que en promedio , según la tendencia se consumen alrededor de 7.4 M digitos/año, veamos a este ritmo cuantos años durara de primer dígito el número 1:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{999999999\text{&space;digitos}}{7400000&space;\text{&space;digitos/ano}}&space;\approx&space;135&space;\text{&space;anos}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{999999999\text{&space;digitos}}{7400000&space;\text{&space;digitos/ano}}&space;\approx&space;135&space;\text{&space;anos}" title="\frac{999999999\text{ digitos}}{7400000 \text{ digitos/ano}} \approx 135 \text{ anos}" /></a>
+<p aling="center">
+	<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{999999999\text{&space;digitos}}{7400000&space;\text{&space;digitos/ano}}&space;\approx&space;135&space;\text{&space;anos}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{999999999\text{&space;digitos}}{7400000&space;\text{&space;digitos/ano}}&space;\approx&space;135&space;\text{&space;anos}" title="\frac{999999999\text{ digitos}}{7400000 \text{ digitos/ano}} \approx 135 \text{ anos}" /></a>
+</p>
