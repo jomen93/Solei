@@ -94,9 +94,9 @@ def get_cc(x):
 
 >  Los NIUP que se asignaron al cabo de 5 años son alrededor de 36 M, puede decirse que que en promedio , según la tendencia se consumen alrededor de 7.4 M digitos/año, veamos a este ritmo cuantos años durara de primer dígito el número 1:
 
-<p align="center">
+<div align="center">
 	<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{999999999\text{&space;digitos}}{7400000&space;\text{&space;digitos/ano}}&space;\approx&space;135&space;\text{&space;anos}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{999999999\text{&space;digitos}}{7400000&space;\text{&space;digitos/ano}}&space;\approx&space;135&space;\text{&space;anos}" title="\frac{999999999\text{ digitos}}{7400000 \text{ digitos/ano}} \approx 135 \text{ anos}" /></a>	
-</p>
+</div>
 
 > En ese orden de ideas de sobra se puede poner la condicion que un número de 10 dígitos que empiece por 1, seguramente será un número de identificación, para este caso la funcion será:
 
